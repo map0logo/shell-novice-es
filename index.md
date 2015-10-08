@@ -13,16 +13,16 @@ El uso del terminal es fundamental para utilizar una amplia diversidad de herram
 y recursos computacionales (incluyendo supercomputadoras de "computación de alto rendimiento").
 Estas lecciones te iniciarán en el camino hacia el uso de estos recursos de forma efectiva.
 
-> ## Prerequisites {.prereq}
+> ## Requisitos previos {.prereq}
 >
-> This lesson guides you through the basics of file systems and the
-> shell.  If you have stored files on a computer at all and recognize
-> the word “file” and either “directory” or “folder” (two common words
-> for the same thing), you're ready for this lesson.
+> Está lección te guía a través de los fundamentos de los sistemas de archivo y el
+> terminal. Si has almacenado alguna vez archivos en una computadora, y reconoces
+> la palabra “archivo” y cualquiera entre “directorio” o “caprpeta” (dos palabras comunes
+> para lo mismo), estás lista para esta lección.
 >
-> If you're already comfortable manipulating files and directories,
-> searching for files with `grep` and `find`, and writing simple loops
-> and scripts, you probably won't learn much from this lesson.
+> Si ya te sientes cómoda manipulando archivos y directorios,
+> buscando archivos con `grep` y `find`, y escribiendo bucles sencillos
+> y scripts, es probable que no aprendas mucho de esta lección.
 
 > ## Getting ready {.getready}
 >
