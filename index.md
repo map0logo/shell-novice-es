@@ -1,17 +1,17 @@
 ---
 layout: page
-title: The Unix Shell
+title: El Terminal Unix
 ---
-The Unix shell has been around longer than most of its users have been alive.
-It has survived so long because it's a power tool
-that allows people to do complex things with just a few keystrokes.
-More importantly,
-it helps them combine existing programs in new ways
-and automate repetitive tasks
-so that they don't have to type the same things over and over again.
-Use of the shell is fundamental to using a wide range of other powerful tools 
-and computing resources (including "high-performance computing" supercomputers).
-These lessons will start you on a path towards using these resources effectively.
+El terminal Unix ha estado presente por mas tiempo del que han vivido la mayoría de sus usuarios.
+Ha sobrevivido por tanto tiempo porque es una herramienta poderosa
+que permite a las personas realizar cosas complejas con tan solo una pocas teclas.
+Mas importante aún,
+ayuda a combinar los programas existentes de nuevas maneras
+y automatiza tareas repetitivas
+de manera tal que no hay que escribir lo mismo una y otra vez.
+El uso del terminal es fundamental para utilizar una amplia diversidad de herramientas poderosas
+y recursos computacionales (incluyendo supercomputadoras de "computación de alto rendimiento").
+Estas lecciones te iniciarán en el camino hacia el uso de estos recursos de forma efectiva.
 
 > ## Prerequisites {.prereq}
 >
@@ -27,7 +27,7 @@ These lessons will start you on a path towards using these resources effectively
 > ## Getting ready {.getready}
 >
 > You need to download some files to follow this lesson:
-> 
+>
 > 1. Make a new folder in your Desktop called `shell-novice`.
 > 2. Download [shell-novice-data.zip](./shell-novice-data.zip) and move the file to this folder.
 > 3. If it's not unzipped yet, double-click on it to unzip it. You should end up with a new folder called `data`.
