@@ -1,8 +1,8 @@
-shell-novice
-============
+shell-principiantes
+===================
 
-First encounter with the Unix shell.  Lesson website is [here](http://swcarpentry.github.io/shell-novice/).
+Primer encuentro con el terminal Unix. El sitio web de la lección está [aquí](http://map0logo.github.io/shell-novice-es/).
 
-Interested in contributing?  Please see our [Guidelines for Contributors](CONTRIBUTING.md).
+¿Interesado en contribuir?  Por favor revisa nuestra [Guía para contribuyentes](CONTRIBUTING.md).
 
-For tips on using these materials in a workshop, see our [Instructor's Guide](http://swcarpentry.github.io/shell-novice/instructors.html).  
+Para obtener consejos sobre el uso de estos materiales en un taller, vea nuestra [Guía del Instructor](http://map0logo.github.io/shell-novice-es/instructors.html).  
