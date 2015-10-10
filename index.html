@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Software Carpentry: The Unix Shell</title>
+    <title>Software Carpentry: El Terminal Unix</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
@@ -26,47 +26,47 @@
       <article>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-                    <h1 class="title">The Unix Shell</h1>
-          <p>The Unix shell has been around longer than most of its users have been alive. It has survived so long because it’s a power tool that allows people to do complex things with just a few keystrokes. More importantly, it helps them combine existing programs in new ways and automate repetitive tasks so that they don’t have to type the same things over and over again. Use of the shell is fundamental to using a wide range of other powerful tools and computing resources (including “high-performance computing” supercomputers). These lessons will start you on a path towards using these resources effectively.</p>
+                    <h1 class="title">El Terminal Unix</h1>
+          <p>El terminal Unix ha estado presente por mas tiempo del que han vivido la mayoría de sus usuarios. Ha sobrevivido por tanto tiempo porque es una herramienta poderosa que permite a las personas realizar cosas complejas con tan solo una pocas teclas. Mas importante aún, ayuda a combinar los programas existentes de nuevas maneras y automatiza tareas repetitivas de manera tal que no hay que escribir lo mismo una y otra vez. El uso del terminal es fundamental para utilizar una amplia diversidad de herramientas poderosas y recursos computacionales (incluyendo supercomputadoras de “computación de alto rendimiento”). Estas lecciones te iniciarán en el camino hacia el uso de estos recursos de forma efectiva.</p>
 <section class="prereq panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-education"></span>Prerequisites</h2>
+<h2><span class="glyphicon glyphicon-education"></span>Requisitos previos</h2>
 </div>
 <div class="panel-body">
-<p>This lesson guides you through the basics of file systems and the shell. If you have stored files on a computer at all and recognize the word “file” and either “directory” or “folder” (two common words for the same thing), you’re ready for this lesson.</p>
-<p>If you’re already comfortable manipulating files and directories, searching for files with <code>grep</code> and <code>find</code>, and writing simple loops and scripts, you probably won’t learn much from this lesson.</p>
+<p>Está lección te guía a través de los fundamentos del sistema de archivos y el terminal. Si has almacenado alguna vez archivos en una computadora, y reconoces la palabra “archivo” y cualquiera entre “directorio” o “carpeta” (dos palabras comunes para lo mismo), estás lista para esta lección.</p>
+<p>Si ya te sientes cómoda manipulando archivos y directorios, buscando archivos con <code>grep</code> y <code>find</code>, y escribiendo bucles sencillos y scripts, es probable que no aprendas mucho de esta lección.</p>
 </div>
 </section>
 <section class="getready panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-check"></span>Getting ready</h2>
+<h2><span class="glyphicon glyphicon-check"></span>Preparándose</h2>
 </div>
 <div class="panel-body">
-<p>You need to download some files to follow this lesson:</p>
+<p>Necesitas descargar algunos archivos para seguir esta lección:</p>
 <ol style="list-style-type: decimal">
-<li>Make a new folder in your Desktop called <code>shell-novice</code>.</li>
-<li>Download <a href="./shell-novice-data.zip">shell-novice-data.zip</a> and move the file to this folder.</li>
-<li>If it’s not unzipped yet, double-click on it to unzip it. You should end up with a new folder called <code>data</code>.</li>
-<li>You can access this folder from the Unix shell with:</li>
+<li>Crear una nueva carpeta en tu Escritorio llamada <code>shell-novice</code>.</li>
+<li>Descargar <a href="./shell-novice-data.zip">shell-novice-data.zip</a> y mover el archivo a esta carpeta.</li>
+<li>Si aún no está descomprimido, haz doble-clic y descomprímelo. Deberías finalizar con una carpeta llamada <code>data</code>.</li>
+<li>Puedes acceder a esta carpeta desde el terminal Unix con:</li>
 </ol>
-<pre class="input"><code>$ cd &amp;&amp; cd Desktop/shell-novice/data</code></pre>
+<pre class="input"><code>$ cd &amp;&amp; cd Escritorio/shell-novice/data</code></pre>
 </div>
 </section>
-<h2 id="topics">Topics</h2>
+<h2 id="temas">Temas</h2>
 <ol style="list-style-type: decimal">
-<li><a href="00-intro.html">Introducing the Shell</a></li>
-<li><a href="01-filedir.html">Files and Directories</a></li>
-<li><a href="02-create.html">Creating Things</a></li>
-<li><a href="03-pipefilter.html">Pipes and Filters</a></li>
-<li><a href="04-loop.html">Loops</a></li>
-<li><a href="05-script.html">Shell Scripts</a></li>
-<li><a href="06-find.html">Finding Things</a></li>
+<li><a href="00-intro.html">Introducción al Terminal</a></li>
+<li><a href="01-filedir.html">Archivos y Directorios</a></li>
+<li><a href="02-create.html">Creando Cosas</a></li>
+<li><a href="03-pipefilter.html">Tuberías y Filtros</a></li>
+<li><a href="04-loop.html">Bucles</a></li>
+<li><a href="05-script.html">Scripts del Terminal</a></li>
+<li><a href="06-find.html">Encontrando Cosas</a></li>
 </ol>
-<h2 id="other-resources">Other Resources</h2>
+<h2 id="otros-recursos">Otros Recursos</h2>
 <ul>
-<li><a href="reference.html">Reference</a></li>
-<li><a href="discussion.html">Discussion</a></li>
-<li><a href="instructors.html">Instructor’s Guide</a></li>
+<li><a href="reference.html">Referencia</a></li>
+<li><a href="discussion.html">Discusión</a></li>
+<li><a href="instructors.html">Guía del Instructor</a></li>
 </ul>
         </div>
       </div>
