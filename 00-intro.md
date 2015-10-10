@@ -1,68 +1,68 @@
 ---
 layout: page
-title: The Unix Shell
-subtitle: Introducing the Shell
+title: El Terminal Unix
+subtitle: Introducción al Terminal
 minutes: 5
 ---
-> ## Learning Objectives {.objectives}
+> ## Objetivos de Aprendizaje {.objectives}
 >
-> *   Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs.
-> *   Explain when and why command-line interfaces should be used instead of graphical interfaces.
+> *   Explicar como el terminal se relaciona con el teclado, la pantalla, el sistema operativo, y los programas del usuario.
+> *   Explicar cuando y porque la interfaz de línea de comandos deben utilizarse en lugar de las interfaces gráficas.
 
-At a high level, computers do four things:
+A un alto nivel, las computadoras hacen cuatro cosas:
 
--   run programs
--   store data
--   communicate with each other
--   interact with us
+-   ejecutan programas
+-   almacenan datos
+-   se comunican entre ellas
+-   interactúan con nosotros
 
-They can do the last of these in many different ways,
-including direct brain-computer links and speech interfaces.
-Since these are still in their infancy,
-most of us use windows, icons, mice, and pointers.
-These technologies didn't become widespread until the 1980s,
-but their roots go back to Doug Engelbart's work in the 1960s,
-which you can see in what has been called
-"[The Mother of All Demos](http://www.youtube.com/watch?v=a11JDLBXtPQ)".
+Pueden hacer la última de muchas formas diferentes,
+incluyendo enlaces directos cerebro-computador y las interfaces de voz.
+Debido a que estas están todavía en su infancia,
+la mayoría de nosotros utilizamos ventanas, iconos, ratones y apuntadores.
+Estas tecnologías no se habían difundido hasta los 80s,
+pero sus raíces se remontan a la obra de Doug Engelbart en los 60s,
+que se puede ver en lo que se ha llamado
+"[La Madre de Todos los Demos](http://www.youtube.com/watch?v=a11JDLBXtPQ)".
 
-Going back even further,
-the only way to interact with early computers was to rewire them.
-But in between,
-from the 1950s to the 1980s,
-most people used line printers.
-These devices only allowed input and output of the letters, numbers, and punctuation found on a standard keyboard,
-so programming languages and interfaces had to be designed around that constraint.
+Yendo aún más atrás,
+la única forma de interactuar con las primeras computadoras era volver a cablearlas.
+Pero mientras tanto,
+desde los años 50s hasta los 80s,
+la mayoría de las personas utilizaban impresoras de línea.
+Estos dispositivos sólo permitían la entrada y salida de letras, números y puntuación que se encontraba en un teclado estándar,
+así que los lenguajes de programación e interfaces tuvieron que ser diseñados bajo esa restricción.
 
-This kind of interface is called a
-**command-line interface**, or CLI,
-to distinguish it from a
-**graphical user interface**, or GUI,
-which most people now use.
-The heart of a CLI is a **read-evaluate-print loop**, or REPL:
-when the user types a command and then presses the enter (or return) key,
-the computer reads it,
-executes it,
-and prints its output.
-The user then types another command,
-and so on until the user logs off.
+Este tipo de interfaz se denomina
+**interfaz de línea de comandos**, o CLI (por command line interface),
+para distinguirla de
+**interfaz gráfica de usuario**, o GUI (por graphical user interface),
+que es la mas utilizadas en la actualidad.
+El corazón de un CLI es un **bucle de lectura-evaluación-impresión**, o REPL (por read-evaluate-print loop):
+cuando el usuario escribe un comando y presiona la tecla intro (o enter, o return),
+la computadora la lee,
+la ejecuta,
+e imprime su salida.
+El usuario entonces escribe otro comando,
+y así hasta que el usuario cierra su sesión.
 
-This description makes it sound as though the user sends commands directly to the computer,
-and the computer sends output directly to the user.
-In fact,
-there is usually a program in between called a
-**command shell**.
-What the user types goes into the shell,
-which then figures out what commands to run and orders the computer to execute them. Note, the shell is called *the shell* because it encloses the operating system in order to hide some of its complexity and make it simpler to interact with.
+Según esta descripción parece que el usuario envía comandos directamente a la computadora, 
+y la computadora envía salida directamente al usuario.
+De hecho,
+hay usualmente un programa en el medio llamado
+**terminal de comandos**.
+Lo que el usuario escribe va al terminal,
+El cual entonces se da cuenta cuales comandos correr y le ordena a la computadora ejecutarlos. Note que, el terminal se denomina *la concha* (the shell) porque cubre al sistema operativo con el fin de esconder algo de su complejidad y hace mas simple interactuar con este.
 
-A shell is a program like any other.
-What's special about it is that its job is to run other programs
-rather than to do calculations itself.
-The most popular Unix shell is Bash,
-the Bourne Again SHell
-(so-called because it's derived from a shell written by Stephen Bourne --- this
-is what passes for wit among programmers).
-Bash is the default shell on most modern implementations of Unix
-and in most packages that provide Unix-like tools for Windows.
+Un terminal es un programa como cualquier otro.
+Lo que es especial de este es que su trabajo es ejecutar otros programas
+en lugar de realizar cálculos por sí mismo.
+El termina Unix mas popular es Bash,
+el Bourne Again SHell
+(llamado así porque está derivado del terminal escrito por Stephen Bourne --- esto
+es lo que ocurre gracias al ingenio entre programadores).
+Bash es el terminal por defecto en la mayoría de las impantaciones modernas de Unix
+y en la mayoría de paquetes que proveen herramientas tipo Unix para Windows.
 
 Using Bash or any other shell
 sometimes feels more like programming than like using a mouse.
