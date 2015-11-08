@@ -35,9 +35,9 @@ así que los lenguajes de programación e interfaces tuvieron que ser diseñados
 
 Este tipo de interfaz se denomina
 **interfaz de línea de comandos**, o CLI (por command line interface),
-para distinguirla de
+para distinguirla de la
 **interfaz gráfica de usuario**, o GUI (por graphical user interface),
-que es la mas utilizadas en la actualidad.
+que es la mas utilizada en la actualidad.
 El corazón de un CLI es un **bucle de lectura-evaluación-impresión**, o REPL (por read-evaluate-print loop):
 cuando el usuario escribe un comando y presiona la tecla intro (o enter, o return),
 la computadora la lee,
@@ -52,16 +52,16 @@ De hecho,
 hay usualmente un programa en el medio llamado
 **terminal de comandos**.
 Lo que el usuario escribe va al terminal,
-El cual entonces se da cuenta cuales comandos correr y le ordena a la computadora ejecutarlos. Note que, el terminal se denomina *la concha* (the shell) porque cubre al sistema operativo con el fin de esconder algo de su complejidad y hace mas simple interactuar con este.
+El cual entonces se da cuenta cuales comandos correr y le ordena a la computadora ejecutarlos. Note que, el terminal se denomina también *la concha* (the shell) porque cubre al sistema operativo con el fin de esconder algo de su complejidad y hace mas simple interactuar con este.
 
 Un terminal es un programa como cualquier otro.
 Lo que es especial de este es que su trabajo es ejecutar otros programas
 en lugar de realizar cálculos por sí mismo.
-El termina Unix mas popular es Bash,
+El terminal Unix mas popular es Bash,
 el Bourne Again SHell
 (llamado así porque está derivado del terminal escrito por Stephen Bourne --- esto
 es lo que ocurre gracias al ingenio entre programadores).
-Bash es el terminal por defecto en la mayoría de las impantaciones modernas de Unix
+Bash es el terminal por defecto en la mayoría de las implantaciones modernas de Unix
 y en la mayoría de paquetes que proveen herramientas tipo Unix para Windows.
 
 Usando Bash o cualquier otro terminal
