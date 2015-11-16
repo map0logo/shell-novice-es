@@ -1,43 +1,43 @@
 ---
 layout: page
-title: The Unix Shell
-subtitle: Files and Directories
+title: El Terminal Unix
+subtitle: Archivos y Directorios
 minutes: 15
 ---
-> ## Learning Objectives {.objectives}
+> ## Objetivos de Aprendizaje {.objectives}
 >
-> *   Explain the similarities and differences between a file and a directory.
-> *   Translate an absolute path into a relative path and vice versa.
-> *   Construct absolute and relative paths that identify specific files and directories.
-> *   Explain the steps in the shell's read-run-print cycle.
-> *   Identify the actual command, flags, and filenames in a command-line call.
-> *   Demonstrate the use of tab completion, and explain its advantages.
+> * Explicar las similitudes y diferencias entre un archivo y un directorio.
+> * Traducir una ruta absoluta en una ruta relativa y viceversa.
+> * Construir rutas absolutas y relativas que identifican a archivos y directorios específicos.
+> * Explicar los pasos en el ciclo lectura-ejecución-impresión del terminal.
+> * Identificar al comando actual, banderas, y nombres de archivo en una llamada de línea de comandos.
+> * Demostrar el uso de la completación con el tabulador, y explicar sus ventajas.
 
-The part of the operating system responsible for managing files and directories
-is called the **file system**.
-It organizes our data into files,
-which hold information,
-and directories (also called "folders"),
-which hold files or other directories.
+La parte del sistema operativo responsable de la gestión de archivos y directorios
+se llama **sistema de archivos**.
+Organiza nuestros datos en archivos,
+que mantienen la información,
+y directorios (también llamados "carpetas"),
+que mantienen archivos u otros directorios.
 
-Several commands are frequently used to create, inspect, rename, and delete files and directories.
-To start exploring them,
-let's open a shell window:
+Se utilizan varios comandos con frecuencia para crear, revisar, renombrar y borrar archivos y directorios.
+Para iniciar la exploración de ellos,
+vamos a abrir una ventana de comandos:
 
 ~~~ {.bash}
 $
 ~~~
 
-The dollar sign is a **prompt**, which shows us that the shell is waiting for input;
-your shell may use a different character as a prompt and may add information before 
-the prompt. When typing commands, either from these lessons or from other sources, 
-do not type the prompt, only the commands that follow it.
+El signo del dólar es un **apuntador**, que nos muestra que el terminal está esperando una entrada;
+su terminal puede utilizar un carácter diferente, como apuntador y puede añadir información antes
+del apuntador. Al escribir comandos, ya sea desde estas lecciones o de otras fuentes,
+no escriba el apuntador, sólo los comandos que le siguen.
 
-Type the command `whoami`,
-then press the Enter key (sometimes marked Return) to send the command to the shell.
-The command's output is the ID of the current user,
-i.e.,
-it shows us who the shell thinks we are:
+Escriba el comando `whoami`,
+a continuación, pulse la tecla Intro (a veces marcada Return) para enviar el comando al terminal.
+La salida del comando es el ID del usuario actual,
+es decir,
+nos muestra quien cree el terminal que somos:
 
 ~~~ {.bash}
 $ whoami
@@ -46,25 +46,25 @@ $ whoami
 nelle
 ~~~
 
-More specifically, when we type `whoami` the shell:
+Mas específicamente, cuando escribimos `whoami` el terminal:
 
-1.  finds a program called `whoami`,
-2.  runs that program,
-3.  displays that program's output, then
-4.  displays a new prompt to tell us that it's ready for more commands.
+1.  encuentra un programa `whoami`,
+2.  ejecuta ese programa,
+3.  muestra la salida del programa, y entonces
+4.  muestra un nuevo apuntador para decirnos que está listo para mas comandos.
 
-Next,
-let's find out where we are by running a command called `pwd`
-(which stands for "print working directory").
-At any moment,
-our **current working directory**
-is our current default directory,
-i.e.,
-the directory that the computer assumes we want to run commands in
-unless we explicitly specify something else.
-Here,
-the computer's response is `/Users/nelle`,
-which is Nelle's **home directory**:
+A continuación,
+encontremos dónde estamos ejecutando el programa llamado `pwd`
+(que significa "imprimir el directorio de trabajo", de "print working directory").
+En cualquier momento,
+nuestro **directorio de trabajo actual**
+es nuestro actual directorio por defecto,
+es decir,
+el directorio en el que el computador asume que queremos ejecutar los comandos 
+a menos que explícitamente indiquemos algo mas.
+Aquí,
+la respuesta de la computadora es `/Users/nelle`,
+el cual es el **directorio home** (o "carpeta personal") de Nell:
 
 ~~~ {.bash}
 $ pwd
@@ -73,7 +73,7 @@ $ pwd
 /Users/nelle
 ~~~
 
-> ## Home directory {.callout}
+> ## Directorio home {.callout}
 >
 > The home directory path will look different on different operating systems.
 > On Linux it will look like `/home/nelle`,
