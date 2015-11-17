@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="generator" content="pandoc">
-    <title>Software Carpentry: The Unix Shell</title>
+    <title>Software Carpentry: El Terminal Unix</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
@@ -26,46 +26,46 @@
       <article>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-                    <a href="index.html"><h1 class="title">The Unix Shell</h1></a>
-          <h2 class="subtitle">Files and Directories</h2>
+                    <a href="index.html"><h1 class="title">El Terminal Unix</h1></a>
+          <h2 class="subtitle">Archivos y Directorios</h2>
           <section class="objectives panel panel-warning">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+<h2><span class="glyphicon glyphicon-certificate"></span>Objetivos de Aprendizaje</h2>
 </div>
 <div class="panel-body">
 <ul>
-<li>Explain the similarities and differences between a file and a directory.</li>
-<li>Translate an absolute path into a relative path and vice versa.</li>
-<li>Construct absolute and relative paths that identify specific files and directories.</li>
-<li>Explain the steps in the shell’s read-run-print cycle.</li>
-<li>Identify the actual command, flags, and filenames in a command-line call.</li>
-<li>Demonstrate the use of tab completion, and explain its advantages.</li>
+<li>Explicar las similitudes y diferencias entre un archivo y un directorio.</li>
+<li>Traducir una ruta absoluta en una ruta relativa y viceversa.</li>
+<li>Construir rutas absolutas y relativas que identifican a archivos y directorios específicos.</li>
+<li>Explicar los pasos en el ciclo lectura-ejecución-impresión del terminal.</li>
+<li>Identificar al comando actual, banderas, y nombres de archivo en una llamada de línea de comandos.</li>
+<li>Demostrar el uso de la completación con el tabulador, y explicar sus ventajas.</li>
 </ul>
 </div>
 </section>
-<p>The part of the operating system responsible for managing files and directories is called the <strong>file system</strong>. It organizes our data into files, which hold information, and directories (also called “folders”), which hold files or other directories.</p>
-<p>Several commands are frequently used to create, inspect, rename, and delete files and directories. To start exploring them, let’s open a shell window:</p>
+<p>La parte del sistema operativo responsable de la gestión de archivos y directorios se llama <strong>sistema de archivos</strong>. Organiza nuestros datos en archivos, que mantienen la información, y directorios (también llamados “carpetas”), que mantienen archivos u otros directorios.</p>
+<p>Se utilizan varios comandos con frecuencia para crear, revisar, renombrar y borrar archivos y directorios. Para iniciar la exploración de ellos, vamos a abrir una ventana de comandos:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$</code></pre>
-<p>The dollar sign is a <strong>prompt</strong>, which shows us that the shell is waiting for input; your shell may use a different character as a prompt and may add information before the prompt. When typing commands, either from these lessons or from other sources, do not type the prompt, only the commands that follow it.</p>
-<p>Type the command <code>whoami</code>, then press the Enter key (sometimes marked Return) to send the command to the shell. The command’s output is the ID of the current user, i.e., it shows us who the shell thinks we are:</p>
+<p>El signo del dólar es un <strong>apuntador</strong>, que nos muestra que el terminal está esperando una entrada; su terminal puede utilizar un carácter diferente, como apuntador y puede añadir información antes del apuntador. Al escribir comandos, ya sea desde estas lecciones o de otras fuentes, no escriba el apuntador, sólo los comandos que le siguen.</p>
+<p>Escriba el comando <code>whoami</code>, a continuación, pulse la tecla Intro (a veces marcada Return) para enviar el comando al terminal. La salida del comando es el ID del usuario actual, es decir, nos muestra quien cree el terminal que somos:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">whoami</span></code></pre>
 <pre class="output"><code>nelle</code></pre>
-<p>More specifically, when we type <code>whoami</code> the shell:</p>
+<p>Mas específicamente, cuando escribimos <code>whoami</code> el terminal:</p>
 <ol style="list-style-type: decimal">
-<li>finds a program called <code>whoami</code>,</li>
-<li>runs that program,</li>
-<li>displays that program’s output, then</li>
-<li>displays a new prompt to tell us that it’s ready for more commands.</li>
+<li>encuentra un programa <code>whoami</code>,</li>
+<li>ejecuta ese programa,</li>
+<li>muestra la salida del programa, y entonces</li>
+<li>muestra un nuevo apuntador para decirnos que está listo para mas comandos.</li>
 </ol>
-<p>Next, let’s find out where we are by running a command called <code>pwd</code> (which stands for “print working directory”). At any moment, our <strong>current working directory</strong> is our current default directory, i.e., the directory that the computer assumes we want to run commands in unless we explicitly specify something else. Here, the computer’s response is <code>/Users/nelle</code>, which is Nelle’s <strong>home directory</strong>:</p>
+<p>A continuación, encontremos dónde estamos ejecutando el programa llamado <code>pwd</code> (que significa “imprimir el directorio de trabajo”, de “print working directory”). En cualquier momento, nuestro <strong>directorio de trabajo actual</strong> es nuestro actual directorio por defecto, es decir, el directorio en el que el computador asume que queremos ejecutar los comandos a menos que explícitamente indiquemos algo mas. Aquí, la respuesta de la computadora es <code>/Users/nelle</code>, el cual es el <strong>directorio home</strong> (o “carpeta personal”) de Nell:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">pwd</span></code></pre>
 <pre class="output"><code>/Users/nelle</code></pre>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>Home directory</h2>
+<h2><span class="glyphicon glyphicon-pushpin"></span>Directorio home</h2>
 </div>
 <div class="panel-body">
-<p>The home directory path will look different on different operating systems. On Linux it will look like <code>/home/nelle</code>, and on Windows it will be similar to <code>C:\Documents and Settings\nelle</code>. Note that it may look slightly different for different versions of Windows.</p>
+<p>La ruta del directorio home se verá diferente en distintos sistemas operativos. En Linux se verá algo como <code>/home/nelle</code>, y en Windows será similar a <code>C:\Documents and Settings\nelle</code>. Note que podría verse ligeramente diferente para distintas versiones de Windows.</p>
 </div>
 </aside>
 <aside class="callout panel panel-info">
@@ -73,63 +73,63 @@
 <h2><span class="glyphicon glyphicon-pushpin"></span>Alphabet Soup</h2>
 </div>
 <div class="panel-body">
-<p>If the command to find out who we are is <code>whoami</code>, the command to find out where we are ought to be called <code>whereami</code>, so why is it <code>pwd</code> instead? The usual answer is that in the early 1970s, when Unix was first being developed, every keystroke counted: the devices of the day were slow, and backspacing on a teletype was so painful that cutting the number of keystrokes in order to cut the number of typing mistakes was actually a win for usability. The reality is that commands were added to Unix one by one, without any master plan, by people who were immersed in its jargon. The result is as inconsistent as the roolz uv Inglish speling, but we’re stuck with it now.</p>
+<p>Si el comando para encontrar quienes somos es <code>whoami</code>, el comando para encontrar donde estamos debería llamarse <code>whereami</code>, entonces ¿porqué en su lugar es <code>pwd</code>? La respuesta usual es que a principios de los 70s, cuando Unix estaba siendo desarrollado por primera vez, cada pulsación contaba: los dispositivos de entonces eran lentos, y la tecla de retroceso en un teletipo era tan complicado que acortar el número de pulsaciones con el fin de reducir el número de errores de tipeo era en realidad una victoria de la usabilidad. La realidad es que los comandos fueron añadidos a Unix uno por uno, sin un plan maestro, por gente que estaba inmersa en su jerga. El resultado es tan inconsistente como biba tu hortografía kasteyana, pero estamos entrampados en esto ahora.</p>
 </div>
 </aside>
-<p>To understand what a “home directory” is, let’s have a look at how the file system as a whole is organized. At the top is the <strong>root directory</strong> that holds everything else. We refer to it using a slash character <code>/</code> on its own; this is the leading slash in <code>/Users/nelle</code>.</p>
-<p>Inside that directory are several other directories: <code>bin</code> (which is where some built-in programs are stored), <code>data</code> (for miscellaneous data files), <code>Users</code> (where users’ personal directories are located), <code>tmp</code> (for temporary files that don’t need to be stored long-term), and so on:</p>
+<p>Para entender lo que es un “directorio home”, vamos a echar un vistazo a cómo está organizado el sistema de archivos como un todo. En la parte superior es el <strong>directorio root</strong> (raíz) que contiene todo lo demás. Nos referimos a él mismo mediante un carácter de barra <code>/</code>; esta es la barra inicial en <code>/Users/nelle</code>.</p>
+<p>Dentro de ese directorio hay varios otros directorios: <code>bin</code> (en el cual se almacenan varios programas incorporados), <code>data</code> (para archivos de datos misceláneos), <code>Users</code> (donde están localizadas las carpetas personales de los usuarios), <code>tmp</code> (para archivos temporales que necesitan estar almacenados por mucho tiempo), y así:</p>
 <div class="figure">
-<img src="fig/filesystem.svg" alt="The File System" /><p class="caption">The File System</p>
+<img src="fig/filesystem.svg" alt="El Sistema de Archivos" /><p class="caption">El Sistema de Archivos</p>
 </div>
-<p>We know that our current working directory <code>/Users/nelle</code> is stored inside <code>/Users</code> because <code>/Users</code> is the first part of its name. Similarly, we know that <code>/Users</code> is stored inside the root directory <code>/</code> because its name begins with <code>/</code>.</p>
-<p>Underneath <code>/Users</code>, we find one directory for each user with an account on this machine. The Mummy’s files are stored in <code>/Users/imhotep</code>, Wolfman’s in <code>/Users/larry</code>, and ours in <code>/Users/nelle</code>, which is why <code>nelle</code> is the last part of the directory’s name.</p>
+<p>Sabemos que nuestro directorio home actual <code>/Users/nelle</code> está almacenado dentro de<code>/Users</code> porque <code>/Users</code> es la primera parte de su nombre. Del mismo modo, sabemos que <code>/Users</code> está almacenado dentro del directorio raíz <code>/</code> debido a que su nombre comienza con <code>/</code>.</p>
+<p>Debajo de <code>/Users</code>, nos encontramos con un directorio para cada usuario con una cuenta en esta máquina. Los archivos de la momia se almacenan en <code>/Users/imhotep</code>, Los del hombre lobo en <code>/Users/larry</code>, y la nuestra en <code>/Users/nelle</code>, es por ello que <code>nelle</code> es la última parte del nombre del directorio.</p>
 <div class="figure">
-<img src="fig/home-directories.svg" alt="Home Directories" /><p class="caption">Home Directories</p>
+<img src="fig/home-directories.svg" alt="Directorios Home" /><p class="caption">Directorios Home</p>
 </div>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
 <h2><span class="glyphicon glyphicon-pushpin"></span>Path</h2>
 </div>
 <div class="panel-body">
-<p>Notice that there are two meanings for the <code>/</code> character. When it appears at the front of a file or directory name, it refers to the root directory. When it appears <em>inside</em> a name, it’s just a separator.</p>
+<p>Tenga en cuenta que hay dos significados para el carácter <code>/</code>. Cuando aparece en la parte delantera de un nombre de archivo o directorio, Se refiere al directorio raíz. Cuando aparece <em>dentro de</em> un nombre, Es tan sólo un separador.</p>
 </div>
 </aside>
-<p>Let’s see what’s in Nelle’s home directory by running <code>ls</code>, which stands for “listing”:</p>
+<p>Veamos lo que hay en el directorio home de Nelle ejecutando <code>ls</code>, que significa “listar”:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span></code></pre>
 <pre class="output"><code>creatures  molecules           pizza.cfg
 data       north-pacific-gyre  solar.pdf
 Desktop    notes.txt           writing</code></pre>
 <div class="figure">
-<img src="fig/homedir.svg" alt="Nelle’s Home Directory" /><p class="caption">Nelle’s Home Directory</p>
+<img src="fig/homedir.svg" alt="El directorio home de Nelle" /><p class="caption">El directorio home de Nelle</p>
 </div>
-<p><code>ls</code> prints the names of the files and directories in the current directory in alphabetical order, arranged neatly into columns. We can make its output more comprehensible by using the <strong>flag</strong> <code>-F</code>, which tells <code>ls</code> to add a trailing <code>/</code> to the names of directories:</p>
+<p><code>ls</code> imprime los nombres de los archivos y directorios en el directorio actual en orden alfabético, dispuestos ordenadamente en columnas. Podemos hacer su salida más comprensible mediante el uso de la <strong>bandera</strong> <code>-F</code>, que le pide a <code>ls</code> añadir al final un <code>/</code>para los nombres de directorios:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F</code></pre>
 <pre class="output"><code>creatures/  molecules/           pizza.cfg
 data/       north-pacific-gyre/  solar.pdf
 Desktop/    notes.txt            writing/</code></pre>
-<p>Here, we can see that <code>/Users/nelle</code> contains six <strong>sub-directories</strong>. The names that don’t have trailing slashes, like <code>notes.txt</code>, <code>pizza.cfg</code>, and <code>solar.pdf</code>, are plain old files. And note that there is a space between <code>ls</code> and <code>-F</code>: without it, the shell thinks we’re trying to run a command called <code>ls-F</code>, which doesn’t exist.</p>
+<p>Aquí, podemos ver que <code>/Users/nelle</code> contiene seis <strong>subdirectorios</strong>. Los nombres que no tienen barras al final, como <code>notes.txt</code>, <code>pizza.cfg</code>, y <code>solar.pdf</code>, son archivos planos de toda la vida. Y tenga en cuenta que hay un espacio entre <code>ls</code> y<code>-F</code>: sin el, el terminal cree que estamos tratando de ejecutar un comando llamado <code>ls-F</code>, que no existe.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>What’s In A Name?</h2>
+<h2><span class="glyphicon glyphicon-pushpin"></span>¿Qué es un nombre?</h2>
 </div>
 <div class="panel-body">
-<p>You may have noticed that all of Nelle’s files’ names are “something dot something”. This is just a convention: we can call a file <code>mythesis</code> or almost anything else we want. However, most people use two-part names most of the time to help them (and their programs) tell different kinds of files apart. The second part of such a name is called the <strong>filename extension</strong>, and indicates what type of data the file holds: <code>.txt</code> signals a plain text file, <code>.pdf</code> indicates a PDF document, <code>.cfg</code> is a configuration file full of parameters for some program or other, and so on.</p>
-<p>This is just a convention, albeit an important one. Files contain bytes: it’s up to us and our programs to interpret those bytes according to the rules for PDF documents, images, and so on.</p>
-<p>Naming a PNG image of a whale as <code>whale.mp3</code> doesn’t somehow magically turn it into a recording of whalesong, though it <em>might</em> cause the operating system to try to open it with a music player when someone double-clicks it.</p>
+<p>Podrías haber notado que todos los nombres de los archivos de Nelle ’son “algo punto algo”. Esto es sólo una convención: podemos llamar a un archivo <code>mitesis</code> o casi cualquier otra cosa que queramos. Sin embargo, la mayoría de la gente usa nombres de dos-partes la mayor parte de su tiempo como ayuda propia (y para sus programas) para identificar diferentes tipos archivos. A la segunda parte de un nombre se le denomina <strong>extensión de archivo</strong>, e indica el tipo de datos que contiene el archivo: <code>.txt</code> señala un archivo de texto plano,<code>.pdf</code> indica un documento PDF, <code>.cfg</code> es un archivo de configuración lleno de parámetros para uno que otro programa, y así.</p>
+<p>Esto es sólo una convención, aunque una importante. Los archivos contienen bytes: nos toca a nosotros y a nuestros programas interpretar esos bytes de acuerdo a las normas de los documentos PDF, las imágenes, y así sucesivamente.</p>
+<p>Poner de nombre a la imagen PNG de una ballena <code>ballena.mp3</code> en todo caso no lo convierte mágicamente en la grabación de cantodeballena, a pesar de que <em>podría</em> hacer que el sistema operativo intente abrirla con un reproductor de música cuando alguien haga doble clic sobre él.</p>
 </div>
 </aside>
-<p>Now let’s take a look at what’s in Nelle’s <code>data</code> directory by running <code>ls -F data</code>, i.e., the command <code>ls</code> with the <strong>arguments</strong> <code>-F</code> and <code>data</code>. The second argument — the one <em>without</em> a leading dash — tells <code>ls</code> that we want a listing of something other than our current working directory:</p>
+<p>Ahora revisemos a lo que está en el directorio <code>data</code> de Nelle ejecutando <code>ls -F data</code>, es decir., el comando <code>ls</code> con los <strong>argumentos</strong> <code>-F</code> y <code>data</code>. El segundo argumento — el que está <em>sin</em> un guión adelante — le dice a <code>ls</code> que queremos una lista de algo distinto de nuestro directorio de trabajo actual:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">ls</span> -F data</code></pre>
 <pre class="output"><code>amino-acids.txt   elements/     pdb/            salmon.txt
 animals.txt       morse.txt     planets.txt     sunspot.txt</code></pre>
-<p>The output shows us that there are four text files and two sub-sub-directories. Organizing things hierarchically in this way helps us keep track of our work: it’s possible to put hundreds of files in our home directory, just as it’s possible to pile hundreds of printed papers on our desk, but it’s a self-defeating strategy.</p>
-<p>Notice, by the way that we spelled the directory name <code>data</code>. It doesn’t have a trailing slash: that’s added to directory names by <code>ls</code> when we use the <code>-F</code> flag to help us tell things apart. And it doesn’t begin with a slash because it’s a <strong>relative path</strong>, i.e., it tells <code>ls</code> how to find something from where we are, rather than from the root of the file system.</p>
+<p>La salida nos muestra que hay cuatro archivos de texto y dos sub-sub-directorios. organizando las cosas jerárquicamente de esta manera nos ayuda a mantener un seguimiento de nuestro trabajo: es posible poner cientos de archivos en nuestro directorio personal, del mismo modo que es posible acumular cientos de papeles impresos en nuestro escritorio, pero es una estrategia contraproducente.</p>
+<p>Noten, por la forma en que deletreó el nombre del directorio <code>data</code>. No tiene una barra final: que se agrega a los nombres de directorio por <code>ls</code> cuando usamos la bandera <code>-F</code> que nos ayuda a separar las cosas. Y no comienza con una barra porque es una <strong>ruta relativa</strong>, es decir, le dice a <code>ls</code> cómo encontrar algo desde donde estamos, en lugar de hacerlo desde la raíz del sistema de archivos.</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>Parameters vs. Arguments</h2>
+<h2><span class="glyphicon glyphicon-pushpin"></span>Parametros vs. Argumentos</h2>
 </div>
 <div class="panel-body">
-<p>According to <a href="https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments">Wikipedia</a>, the terms argument and <strong>parameter</strong> mean slightly different things. In practice, however, most people use them interchangeably or inconsistently, so we will too.</p>
+<p>De acuerdo a la <a href="https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments">Wikipedia</a>, los términos argumento y <strong>parametro</strong> significan cosas ligeramente diferentes. En la práctica, de todas maneras, la mayoría los utiliza de forma indistinta e inconsistente, así que nosotros también lo haremos.</p>
 </div>
 </aside>
 <p>If we run <code>ls -F /data</code> (<em>with</em> a leading slash) we get a different answer, because <code>/data</code> is an <strong>absolute path</strong>:</p>
