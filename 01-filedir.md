@@ -75,65 +75,65 @@ $ pwd
 
 > ## Directorio home {.callout}
 >
-> The home directory path will look different on different operating systems.
-> On Linux it will look like `/home/nelle`,
-> and on Windows it will be similar to `C:\Documents and Settings\nelle`.
-> Note that it may look slightly different for different versions of Windows.
+> La ruta del directorio home se verá diferente en distintos sistemas operativos.
+> En Linux se verá algo como `/home/nelle`,
+> y en Windows será similar a `C:\Documents and Settings\nelle`.
+> Note que podría verse ligeramente diferente para distintas versiones de Windows.
 
 
 > ## Alphabet Soup {.callout}
 >
-> If the command to find out who we are is `whoami`, the command to find
-> out where we are ought to be called `whereami`, so why is it `pwd`
-> instead? The usual answer is that in the early 1970s, when Unix was
-> first being developed, every keystroke counted: the devices of the day
-> were slow, and backspacing on a teletype was so painful that cutting the
-> number of keystrokes in order to cut the number of typing mistakes was
-> actually a win for usability. The reality is that commands were added to
-> Unix one by one, without any master plan, by people who were immersed in
-> its jargon. The result is as inconsistent as the roolz uv Inglish
-> speling, but we're stuck with it now.
+> Si el comando para encontrar quienes somos es `whoami`, el comando para encontrar
+> donde estamos debería llamarse `whereami`, entonces ¿porqué en su lugar es `pwd`?
+> La respuesta usual es que a principios de los 70s, cuando Unix estaba
+> siendo desarrollado por primera vez, cada pulsación contaba: los dispositivos de entonces
+> eran lentos, y la tecla de retroceso en un teletipo era tan complicado que acortar
+> el número de pulsaciones con el fin de reducir el número de errores de tipeo era
+> en realidad una victoria de la usabilidad. La realidad es que los comandos fueron añadidos a
+> Unix uno por uno, sin un plan maestro, por gente que estaba inmersa en
+> su jerga. El resultado es tan inconsistente como biba tu hortografía
+> kasteyana, pero estamos entrampados en esto ahora.
 
-To understand what a "home directory" is,
-let's have a look at how the file system as a whole is organized.
-At the top is the **root directory**
-that holds everything else.
-We refer to it using a slash character `/` on its own;
-this is the leading slash in `/Users/nelle`.
+Para entender lo que es un "directorio home",
+vamos a echar un vistazo a cómo está organizado el sistema de archivos como un todo.
+En la parte superior es el **directorio root** (raíz)
+que contiene todo lo demás.
+Nos referimos a él mismo mediante un carácter de barra `/`;
+esta es la barra inicial en `/Users/nelle`.
 
-Inside that directory are several other directories:
-`bin` (which is where some built-in programs are stored),
-`data` (for miscellaneous data files),
-`Users` (where users' personal directories are located),
-`tmp` (for temporary files that don't need to be stored long-term),
-and so on:
+Dentro de ese directorio hay varios otros directorios:
+`bin` (en el cual se almacenan varios programas incorporados),
+`data` (para archivos de datos misceláneos),
+`Users` (donde están localizadas las carpetas personales de los usuarios),
+`tmp` (para archivos temporales que necesitan estar almacenados por mucho tiempo),
+y así:
 
-![The File System](fig/filesystem.svg)
+![El Sistema de Archivos](fig/filesystem.svg)
 
-We know that our current working directory `/Users/nelle` is stored inside `/Users`
-because `/Users` is the first part of its name.
-Similarly,
-we know that `/Users` is stored inside the root directory `/`
-because its name begins with `/`.
+Sabemos que nuestro directorio home actual `/Users/nelle` está almacenado dentro de` /Users`
+porque `/Users` es la primera parte de su nombre.
+Del mismo modo,
+sabemos que `/Users` está almacenado dentro del directorio raíz `/`
+debido a que su nombre comienza con `/`.
 
-Underneath `/Users`,
-we find one directory for each user with an account on this machine.
-The Mummy's files are stored in `/Users/imhotep`,
-Wolfman's in `/Users/larry`,
-and ours in `/Users/nelle`,
-which is why `nelle` is the last part of the directory's name.
+Debajo de `/Users`,
+nos encontramos con un directorio para cada usuario con una cuenta en esta máquina.
+Los archivos de la momia se almacenan en `/Users/imhotep`,
+Los del hombre lobo en `/Users/larry`,
+y la nuestra en `/Users/nelle`,
+es por ello que `nelle` es la última parte del nombre del directorio.
 
-![Home Directories](fig/home-directories.svg)
+![Directorios Home](fig/home-directories.svg)
 
 > ## Path {.callout}
 >
-> Notice that there are two meanings for the `/` character.
-> When it appears at the front of a file or directory name,
-> it refers to the root directory. When it appears *inside* a name,
-> it's just a separator.
+> Tenga en cuenta que hay dos significados para el carácter `/`.
+> Cuando aparece en la parte delantera de un nombre de archivo o directorio,
+> Se refiere al directorio raíz. Cuando aparece *dentro de* un nombre,
+> Es tan sólo un separador.
 
-Let's see what's in Nelle's home directory by running `ls`,
-which stands for "listing":
+Veamos lo que hay en el directorio home de Nelle ejecutando `ls`,
+que significa "listar":
 
 ~~~ {.bash}
 $ ls
@@ -144,12 +144,12 @@ data       north-pacific-gyre  solar.pdf
 Desktop    notes.txt           writing
 ~~~
 
-![Nelle's Home Directory](fig/homedir.svg)
+![El directorio home de Nelle](fig/homedir.svg)
 
-`ls` prints the names of the files and directories in the current directory in alphabetical order,
-arranged neatly into columns.
-We can make its output more comprehensible by using the **flag** `-F`,
-which tells `ls` to add a trailing `/` to the names of directories:
+`ls` imprime los nombres de los archivos y directorios en el directorio actual en orden alfabético,
+dispuestos ordenadamente en columnas.
+Podemos hacer su salida más comprensible mediante el uso de la **bandera** `-F`,
+que le pide a `ls` añadir al final un `/ `para los nombres de directorios:
 
 ~~~ {.bash}
 $ ls -F
@@ -160,42 +160,42 @@ data/       north-pacific-gyre/  solar.pdf
 Desktop/    notes.txt            writing/
 ~~~
 
-Here,
-we can see that `/Users/nelle` contains six **sub-directories**.
-The names that don't have trailing slashes,
-like `notes.txt`, `pizza.cfg`, and `solar.pdf`,
-are plain old files.
-And note that there is a space between `ls` and `-F`:
-without it,
-the shell thinks we're trying to run a command called `ls-F`,
-which doesn't exist.
+Aquí,
+podemos ver que `/Users/nelle` contiene seis **subdirectorios**.
+Los nombres que no tienen barras al final,
+como `notes.txt`, `pizza.cfg`, y `solar.pdf`,
+son archivos planos de toda la vida.
+Y tenga en cuenta que hay un espacio entre `ls` y`-F`:
+sin el,
+el terminal cree que estamos tratando de ejecutar un comando llamado `ls-F`,
+que no existe.
 
-> ## What's In A Name? {.callout}
+> ## ¿Qué es un nombre? {.callout}
 >
-> You may have noticed that all of Nelle's files' names are "something dot
-> something". This is just a convention: we can call a file `mythesis` or
-> almost anything else we want. However, most people use two-part names
-> most of the time to help them (and their programs) tell different kinds
-> of files apart. The second part of such a name is called the
-> **filename extension**, and indicates
-> what type of data the file holds: `.txt` signals a plain text file, `.pdf`
-> indicates a PDF document, `.cfg` is a configuration file full of parameters
-> for some program or other, and so on.
+> Podrías haber notado que todos los nombres de los archivos de Nelle 'son "algo punto
+> algo". Esto es sólo una convención: podemos llamar a un archivo `mitesis` o
+> casi cualquier otra cosa que queramos. Sin embargo, la mayoría de la gente usa nombres de dos-partes
+> la mayor parte de su tiempo como ayuda propia (y para sus programas) para identificar diferentes tipos
+> archivos. A la segunda parte de un nombre se le denomina
+> **extensión de archivo**, e indica
+> el tipo de datos que contiene el archivo: `.txt` señala un archivo de texto plano,`.pdf`
+> indica un documento PDF, `.cfg` es un archivo de configuración lleno de parámetros
+> para uno que otro programa, y así.
 >
-> This is just a convention, albeit an important one. Files contain
-> bytes: it's up to us and our programs to interpret those bytes
-> according to the rules for PDF documents, images, and so on.
+> Esto es sólo una convención, aunque una importante. Los archivos contienen
+> bytes: nos toca a nosotros y a nuestros programas interpretar esos bytes
+> de acuerdo a las normas de los documentos PDF, las imágenes, y así sucesivamente.
 >
-> Naming a PNG image of a whale as `whale.mp3` doesn't somehow
-> magically turn it into a recording of whalesong, though it *might*
-> cause the operating system to try to open it with a music player
-> when someone double-clicks it.
+> Poner de nombre a la imagen PNG de una ballena `ballena.mp3` en todo caso no
+> lo convierte mágicamente en la grabación de cantodeballena, a pesar de que *podría*
+> hacer que el sistema operativo intente abrirla con un reproductor de música
+> cuando alguien haga doble clic sobre él.
 
-Now let's take a look at what's in Nelle's `data` directory by running `ls -F data`,
-i.e.,
-the command `ls` with the **arguments** `-F` and `data`.
-The second argument --- the one *without* a leading dash --- tells `ls` that
-we want a listing of something other than our current working directory:
+Ahora revisemos a lo que está en el directorio `data` de Nelle ejecutando `ls -F data`,
+es decir.,
+el comando `ls` con los **argumentos** `-F` y `data`.
+El segundo argumento --- el que está *sin* un guión adelante --- le dice a `ls` que
+queremos una lista de algo distinto de nuestro directorio de trabajo actual:
 
 ~~~ {.bash}
 $ ls -F data
@@ -205,28 +205,28 @@ amino-acids.txt   elements/     pdb/	        salmon.txt
 animals.txt       morse.txt     planets.txt     sunspot.txt
 ~~~
 
-The output shows us that there are four text files and two sub-sub-directories.
-Organizing things hierarchically in this way helps us keep track of our work:
-it's possible to put hundreds of files in our home directory,
-just as it's possible to pile hundreds of printed papers on our desk,
-but it's a self-defeating strategy.
+La salida nos muestra que hay cuatro archivos de texto y dos sub-sub-directorios.
+organizando las cosas jerárquicamente de esta manera nos ayuda a mantener un seguimiento de nuestro trabajo:
+es posible poner cientos de archivos en nuestro directorio personal,
+del mismo modo que es posible acumular cientos de papeles impresos en nuestro escritorio,
+pero es una estrategia contraproducente.
 
-Notice, by the way that we spelled the directory name `data`.
-It doesn't have a trailing slash:
-that's added to directory names by `ls` when we use the `-F` flag to help us tell things apart.
-And it doesn't begin with a slash because it's a **relative path**,
-i.e., it tells `ls` how to find something from where we are,
-rather than from the root of the file system.
+Noten, por la forma en que deletreó el nombre del directorio `data`.
+No tiene una barra final:
+que se agrega a los nombres de directorio por `ls` cuando usamos la bandera `-F` que nos ayuda a separar las cosas.
+Y no comienza con una barra porque es una **ruta relativa**,
+es decir, le dice a `ls` cómo encontrar algo desde donde estamos,
+en lugar de hacerlo desde la raíz del sistema de archivos.
 
-> ## Parameters vs. Arguments {.callout}
+> ## Parametros vs. Argumentos {.callout}
 >
-> According to [Wikipedia](https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments),
-> the terms argument and **parameter**
-> mean slightly different things.
-> In practice,
-> however,
-> most people use them interchangeably or inconsistently,
-> so we will too.
+> De acuerdo a la [Wikipedia](https://en.wikipedia.org/wiki/Parameter_(computer_programming)#Parameters_and_arguments),
+> los términos argumento y **parametro**
+> significan cosas ligeramente diferentes.
+> En la práctica,
+> de todas maneras,
+> la mayoría los utiliza de forma indistinta e inconsistente,
+> así que nosotros también lo haremos.
 
 If we run `ls -F /data` (*with* a leading slash) we get a different answer,
 because `/data` is an **absolute path**:
