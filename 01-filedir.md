@@ -228,8 +228,8 @@ en lugar de hacerlo desde la raíz del sistema de archivos.
 > la mayoría los utiliza de forma indistinta e inconsistente,
 > así que nosotros también lo haremos.
 
-If we run `ls -F /data` (*with* a leading slash) we get a different answer,
-because `/data` is an **absolute path**:
+Si corremos `ls -F /data` (*con* una barra al principio) obtenemos una respuesta diferente,
+porque `/data` es una **ruta absoluta**:
 
 ~~~ {.bash}
 $ ls -F /data
